@@ -1,0 +1,17 @@
+body {
+	background-color: maroon;
+    display: flex;
+    justify-content: center;
+}
+
+.centerDiv {
+	padding-top:0%;
+	bottom: 0;
+	width: 15%;
+	background-color: white;
+}
+
+#clippy {
+	padding:30px;
+	width:30%;
+}
