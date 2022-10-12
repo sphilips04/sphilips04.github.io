@@ -1,13 +1,11 @@
 body {
 	background-color: maroon;
-    display: flex;
-    justify-content: center;
 }
 
 .centerDiv {
 	padding-top:0%;
 	bottom: 0;
-	width: 50%;
+	width: 30%;
 	background-color: white;
 }
 
