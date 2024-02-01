@@ -1,0 +1,7 @@
+level one
+hook#x:500#y:100#mass:50
+hook#x:900#y:100#mass:50
+hook#x:1300#y:100#mass:50
+mine#x:900#y:250
+startingPos#x:300#y:200
+goalLine#x:1500#y:0
