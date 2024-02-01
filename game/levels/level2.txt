@@ -1,6 +1,0 @@
-level Two
-hook#x:400#y:200#mass:50
-hook#x:600#y:100#mass:50
-hook#x:800#y:0#mass:50
-startingPos#x:300#y:200
-goalLine#x:1000#y:0
