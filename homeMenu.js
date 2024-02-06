@@ -1,14 +1,19 @@
 let canvas;
+let bubbles;
 
 function setup() {
+    bubbles = new Array();
+    for (let i = 0; i < 50; i++) {
+        let bubble = new Bubble();
+        bubbles.push(bubble);
+    }
     canvas = createCanvas(windowWidth, windowHeight);
 }
 
 function draw() {
-    background(50);
+    background(255);
 
-    fill(255,0,0)
-    ellipse(200, 200, .01 * windowWidth, .01 * windowHeight);
+    bubbles.forEach((bubble) => bubble.draw());
 }
 
 function windowResized() {
