@@ -7,7 +7,9 @@ function setup() {
         let bubble = new Bubble();
         bubbles.push(bubble);
     }
+
     canvas = createCanvas(windowWidth, windowHeight);
+    canvas.position(0, 0);
 }
 
 function draw() {
