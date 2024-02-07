@@ -20,4 +20,9 @@ function draw() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-  }
+    bubbles.forEach((bubble) => bubble.scaleBubble())
+}
+
+function createBubbleArr() {
+    
+}
