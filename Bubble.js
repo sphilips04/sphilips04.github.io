@@ -10,7 +10,7 @@ class Bubble {
 
     scaleBubble() {
         this.x = random(0, windowWidth);
-        this.y = random(-windowHeight - 200, -50);
+        this.y = random(-windowHeight - 600, -50);
     }
 
     draw() {
@@ -28,5 +28,10 @@ class Bubble {
         
         if (this.y - this.radius*2 > windowHeight) {this.y = 0 - this.radius*2};
         this.framesAlive += 1;
+    }
+
+    move(x, y) {
+        this.x += x;
+        this.y += y;
     }
 }   

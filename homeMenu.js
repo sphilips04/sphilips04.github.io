@@ -4,7 +4,7 @@ let infoBubbles;
 
 function setup() {
     bubbles = new Array();
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 75; i++) {
         let bubble = new Bubble();
         bubbles.push(bubble);
     }
@@ -18,14 +18,14 @@ function setup() {
     }
 
     canvas = createCanvas(windowWidth, windowHeight);
-    canvas.position(0, 0);
+    canvas.position(0,0);
 }
 
 function draw() {
     background(255);
 
     bubbles.forEach((bubble) => bubble.draw());
-    infoBubbles.forEach((array) => array.forEach((infoBubble) => infoBubble.draw()));
+    //infoBubbles.forEach((array) => array.forEach((infoBubble) => infoBubble.draw()));
 }
 
 function windowResized() {
@@ -35,4 +35,12 @@ function windowResized() {
 
 function createBubbleArr() {
     
+}
+
+function mouseWheel(event) {
+    let scrollDistance = -event.delta;
+    let maxSpeed = 10;
+    if (scrollDistance < 0) {scrollDistance = constrain(scrollDistance, -maxSpeed, 0);}
+    if (scrollDistance > 0) {scrollDistance = constrain(scrollDistance, 0, maxSpeed);}
+    bubbles.forEach((bubble => bubble.move(0, scrollDistance)))
 }

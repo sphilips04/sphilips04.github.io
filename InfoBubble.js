@@ -12,6 +12,6 @@ class InfoBubble {
     draw() {
         noStroke();
         fill(50, 50, 255);
-        ellipse(windowWidth * this.xScale, windowHeight * this.yScale, windowHeight * .15, windowHeight * .15);
+        ellipse(windowWidth * this.xScale, windowHeight * this.yScale, windowHeight * .12, windowHeight * .12);
     }
 }

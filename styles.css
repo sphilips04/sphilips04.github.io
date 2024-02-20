@@ -1,8 +1,8 @@
 html, body {
-    background-color: gray;
-    overflow: hidden;
+    background-color: white;
+    margin: 0;
 }
 
-h1 {
-    color:red;
+.canvas {
+    position: relative;
 }
