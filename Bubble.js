@@ -2,15 +2,15 @@ class Bubble {
     constructor() {
         this.x;
         this.y;
-        this.scaleBubble();
+        this.scaleBubblePos();
         this.radius = random(25, 75);
         this.framesAlive = 0;
         this.movementOffset = random(0, 360);
     }
 
-    scaleBubble() {
+    scaleBubblePos() {
         this.x = random(0, windowWidth);
-        this.y = random(-windowHeight - 600, -50);
+        this.y = random(-windowHeight*2, -50);
     }
 
     draw() {
@@ -26,7 +26,7 @@ class Bubble {
         this.x += cos(this.framesAlive/100 + this.movementOffset);
         this.radius += cos((this.framesAlive + this.movementOffset)/30) * 0.25;
         
-        if (this.y - this.radius*2 > windowHeight) {this.y = 0 - this.radius*2};
+        if (this.y > windowHeight + 800) {this.y = 0 - this.radius*2};
         this.framesAlive += 1;
     }
 
