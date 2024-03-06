@@ -6,12 +6,13 @@ class NameBubble {
         this.timeSeconds = 0;
         this.frames = [[0,0],[1,0],[2,0],[0,1],[1,1],[2,1]];
         this.yFrame = 0;
-        this.radius = 32;
+        this.radius = 40;
+        this.color = random([[216, 17, 89]])
     }
 
     draw(bubbleAnimation) {
 
-        fill(0, 0, 255, 50);
+        fill(...this.color, 150);
         ellipse(this.x, this.y, this.radius-10, this.radius-10);
         imageMode(CENTER);
         let currentFrame = this.frames[this.timeSeconds];
@@ -23,7 +24,7 @@ class NameBubble {
     }
 
     update() {
-        this.time++;
+        //this.time++;
         if (this.time == 30) {
             this.time = 0;
             this.timeSeconds++;
