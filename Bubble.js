@@ -3,7 +3,7 @@ class Bubble {
         this.x;
         this.y;
         this.scaleBubblePos();
-        this.radius = random(25, 75);
+        this.radius = random(25, 100);
         this.framesAlive = 0;
         this.movementOffset = random(0, 360);
     }

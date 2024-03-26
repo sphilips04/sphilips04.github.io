@@ -4,11 +4,11 @@ class NameBubble {
         this.y = y;
         this.time = 0;
         this.timeSeconds = 0;
-        this.bounceTime = 0;
+        this.animationTime = 0;
         this.frames = [[0,0],[1,0],[2,0],[0,1],[1,1],[2,1]];
         this.yFrame = 0;
         this.radius = 40;
-        this.color = random([[216, 17, 89], [90, 220, 20], [20, 80, 220]])
+        this.color = random([[216, 17, 89], [0, 150, 0], [20, 80, 220]])
     }
 
     draw(bubbleAnimation) {
@@ -26,7 +26,7 @@ class NameBubble {
 
     update() {
         this.time++;
-        this.bounceTime += 0.5;
+        this.animationTime += 1;
         if (this.time == 30) {
             this.time = 0;
             
@@ -34,6 +34,11 @@ class NameBubble {
 
         if (this.timeSeconds == 6) {this.timeSeconds = 0;}
 
-        this.y += sin(this.bounceTime / 10) / 4;
+        this.y += sin(this.animationTime / 20) / 4;
+
+
+        if (this.animationTime <= 600/3) {
+            this.y += 3
+        }
     }
 }
