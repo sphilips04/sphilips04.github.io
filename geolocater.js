@@ -1,4 +1,5 @@
 let locationReceived = false;
+console.log("updated");
 
 function getLocation() {
     // Check if the browser supports geolocation
@@ -15,6 +16,10 @@ const checkPositionTimer = setInterval(function() {
         }
 
         navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+        const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        document.getElementById('location').style.backgroundColor = randomColor;
 
     }, 1000);
 
