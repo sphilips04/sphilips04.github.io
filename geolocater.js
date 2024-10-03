@@ -1,11 +1,23 @@
+let locationReceived = false;
+
 function getLocation() {
     // Check if the browser supports geolocation
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(showPosition, showError);
+        locationReceived = true;
     } else {
         document.getElementById('location').innerHTML = "Geolocation is not supported by this browser.";
     }
 }
+
+const checkPositionTimer = setInterval(function() {
+        if (!locationReceived) {
+            return;
+        }
+
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
+
+    }, 1000);
 
 function showPosition(position) {
     const latitude = position.coords.latitude;
