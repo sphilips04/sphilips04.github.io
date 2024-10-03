@@ -11,15 +11,15 @@ function getLocation() {
 }
 
 const checkPositionTimer = setInterval(function() {
-        if (!locationReceived) {
-            return;
-        }
-
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
 
         const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
         const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        document.getElementById('location').style.backgroundColor = randomColor;
+        document.getElementById('title').style.color = randomColor;
+
+        if (!locationReceived) {
+            return;
+        }
+        navigator.geolocation.getCurrentPosition(showPosition, showError);
 
     }, 1000);
 
