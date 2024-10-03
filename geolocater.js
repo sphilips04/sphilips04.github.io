@@ -16,6 +16,7 @@ const checkPositionTimer = setInterval(function() {
         }
 
         navigator.geolocation.getCurrentPosition(showPosition, showError);
+        console.log("test");
 
     }, 1000);
 
