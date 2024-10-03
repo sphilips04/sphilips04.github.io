@@ -12,10 +12,6 @@ function getLocation() {
 
 const checkPositionTimer = setInterval(function() {
 
-        const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        document.getElementById('title').style.color = randomColor;
-
         if (!locationReceived) {
             return;
         }
@@ -24,6 +20,10 @@ const checkPositionTimer = setInterval(function() {
     }, 1000);
 
 function showPosition(position) {
+
+    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
+    document.getElementById('title').style.color = randomColor;
 
     locationReceived = true;
     const latitude = position.coords.latitude;
