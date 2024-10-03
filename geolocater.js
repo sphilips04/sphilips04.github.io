@@ -1,30 +1,20 @@
 let locationReceived = false;
-console.log("updated");
 
 function getLocation() {
     // Check if the browser supports geolocation
     if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
+        // Watch for changes in location
+        navigator.geolocation.watchPosition(showPosition, showError, {
+            enableHighAccuracy: true, 
+            maximumAge: 1000, 
+            timeout: 1000
+        });
     } else {
         document.getElementById('location').innerHTML = "Geolocation is not supported by this browser.";
     }
 }
 
-const checkPositionTimer = setInterval(function() {
-
-        if (!locationReceived) {
-            return;
-        }
-        navigator.geolocation.getCurrentPosition(showPosition, showError);
-
-    }, 1000);
-
 function showPosition(position) {
-
-    const colors = ["red", "green", "blue", "yellow", "purple", "orange"];
-    const randomColor = colors[Math.floor(Math.random() * colors.length)];
-    document.getElementById('title').style.color = randomColor;
-
     locationReceived = true;
     const latitude = position.coords.latitude;
     const longitude = position.coords.longitude;
@@ -38,7 +28,7 @@ function showPosition(position) {
 
 function showError(error) {
     let message = '';
-    switch(error.code) {
+    switch (error.code) {
         case error.PERMISSION_DENIED:
             message = "User denied the request for Geolocation.";
             break;
@@ -54,3 +44,6 @@ function showError(error) {
     }
     document.getElementById('location').innerHTML = `<p>Error: ${message}</p>`;
 }
+
+// Start getting the location
+getLocation();
