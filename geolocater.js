@@ -1,3 +1,5 @@
+console.log("test");
+
 function getLocation() {
     // Check if the browser supports geolocation
     if (navigator.geolocation) {
