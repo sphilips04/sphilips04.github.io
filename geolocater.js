@@ -6,6 +6,7 @@ function getLocation() {
         // Watch for changes in location
         navigator.geolocation.watchPosition(showPosition, showError, {
             enableHighAccuracy: true, 
+            timeout: 100000,
             maximumAge: 0
         });
     } else {
