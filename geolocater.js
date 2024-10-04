@@ -4,8 +4,7 @@ function getLocation() {
         // Watch for changes in location
         navigator.geolocation.watchPosition(showPosition, showError, {
             enableHighAccuracy: true, 
-            maximumAge: 1000, 
-            timeout: 1000
+            maximumAge: 0
         });
     } else {
         document.getElementById('location').innerHTML = "Geolocation is not supported by this browser.";
